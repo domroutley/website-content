@@ -1,0 +1,28 @@
+name: CD
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Group relevant files into src
+        run: |
+          mkdir src
+          cp *.css src/
+          cp *.html src/
+          cp *.png src/
+          ls src
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+       
+      - name: Upload files to storage account
+        uses: azure/CLI@v1
+        with:
+          azcliversion: 2.11.1
+          inlineScript: az storage blob upload-batch --source src --destination '$web' --account-name websitesdomroutley
