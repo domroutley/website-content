@@ -25,4 +25,4 @@ jobs:
         uses: azure/CLI@v1
         with:
           azcliversion: 2.11.1
-          inlineScript: az storage blob upload-batch --source src --destination '$web' --account-name websitesdomroutley
+          inlineScript: az storage blob sync --source src --container '$web' --account-name websitesdomroutley
