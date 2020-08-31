@@ -3,7 +3,7 @@ on:
   push:
     branches: [ main ]
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -20,7 +20,7 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-       
+
       - name: Upload files to storage account
         uses: azure/CLI@v1
         with:

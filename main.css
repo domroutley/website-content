@@ -9,13 +9,10 @@
   padding-left: 10%;
 }
 
-#footer {
+#links {
+  bottom: 0px;
   padding-top: 4vh;
   text-align: center;
-}
-
-#footer {
-  bottom: 0px;
 }
 
 #left {
