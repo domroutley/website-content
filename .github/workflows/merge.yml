@@ -2,7 +2,7 @@ name: Acceptance
 on: pull_request
 
 jobs:
-  deploy:
+  Acceptance:
     runs-on: ubuntu-latest
     env:
       TF_IN_AUTOMATION: true
