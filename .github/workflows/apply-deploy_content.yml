@@ -12,6 +12,7 @@ jobs:
       TF_CLI_ARGS: -no-color
     steps:
       - uses: actions/checkout@v2
+
       - uses: hashicorp/setup-terraform@v1
         with:
           terraform_version: ${{ env.TF_VER }}
