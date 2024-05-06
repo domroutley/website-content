@@ -56,12 +56,11 @@ jobs:
           ls src
 
       - name: Azure Login
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Upload files to storage account
-        uses: azure/CLI@v1
+        uses: azure/CLI@v2
         with:
-          azcliversion: 2.11.1
           inlineScript: az storage blob sync --source src --container '$web' --account-name websitesdomroutley
